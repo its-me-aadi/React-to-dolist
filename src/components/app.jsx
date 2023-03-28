@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import Items from "./items";
+import Heading from "./heading";
+import Form from "./form";
 
 function App() {
 
   const [item,setItem]=useState("");
-  const [list,setList]=useState(["YO"]);
 
+  const [list,setList]=useState(["YO"]);
   function newItem(event){
     const {value}=event.target;
     setItem(value);
@@ -16,30 +19,32 @@ function App() {
     );
     console.log(list);
   }
-  
+  function Delete(id){
+    setList(prevValue=>{
+      return (
+        prevValue.filter((item,index)=>{
+          return index!==id;
+        })
+      )
+      
+    })
+    
+    
+  }
 
 
   return (
     <div className="container">
-      <div className="heading">
-        <h1>To-Do List</h1>
-      </div>
-      <div className="form">
-        <input type="text" onChange={newItem} value={item}/>
-        <button onClick={Add}>
-          <span>Add</span>
-        </button>
-      </div>
+      <Heading/>
+      <Form inputFunc={newItem} value={item} buttonFunc={Add}/>
       <div>
-          {list.map(listItem=>{
-          return (
-            <ul>
-              <li>
-              {listItem}
-              </li>
-          </ul>
-            ) 
-        })}   
+          <ul>
+          {
+            list.map((listItem,index)=>(
+              <Items key={index} id={index} text={listItem} delete={Delete} />
+            ))
+          }
+        </ul>
       </div>
     </div>
   );
