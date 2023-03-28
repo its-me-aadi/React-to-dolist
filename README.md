@@ -1,11 +1,14 @@
-# Getting Started with Create React App
+# React to-do list
 
+Steps to run this project
 
-## Available Scripts
+## Clone:
+git clone https://github.com/its-me-aadi/React-to-dolist.git
 
-In the project directory, you can run:
+## Go to project folder
+cd to-dolist
 
-### `npm start`
+### Run `npm start` 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
