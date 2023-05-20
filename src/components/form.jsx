@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "./button";
 import Input from "./input";
+import '../App.css';
+
 
 function Form(form){
 return (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Items from "./items";
 import Heading from "./heading";
 import Form from "./form";
+import '../App.css';
 
 function App() {
 
